@@ -5,5 +5,105 @@ html{
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #e3edf1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%2326d3f7' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+.message {
+    color: white;
+}
+
+.countLetters {
+    color: white
+}
+
+li {
+    display: flex;
+    margin: 10px 18px;
+    color: white;
+    font-size: large;
+}
+
+.delete{
+    cursor: pointer;
+    color: red;
+}
+
+.edit {
+    cursor: pointer;
+    color: green;
+    margin-right: 10px;
+    margin-left: auto;
+    padding-left: 10px;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+li::before{
+    content: '★';
+    margin-right: 2px;
+}
+
+.section {
+    width: 50rem
+}
+
+.todoSection {
+    text-align: center;
+}
+
+.textInput {
+    width: 70%;
+    height: 45px;
+    font-size: 24px;
+    border-radius: 10px;
+    outline:none;
+    padding: 2px 5px;
+    letter-spacing: 1px;
+}
+
+.add {
+    /* display: inline-block;
+    text-align: center;
+    vertical-align: middle; */
+    padding: 13px 44px;
+    border: 1px solid #9d8a2b;
+    border-radius: 8px;
+    background: #ffe347;
+    background: linear-gradient(to bottom, #ffe347, #9d8a2b);
+    text-shadow: #70631f 1px 1px 1px;
+    color: #ffffff;
+    outline: none;
+    font-size: large;
+}
+.add:hover,
+.add:focus {
+    border: 1px solid #e0c53e;
+    background: #ffff55;
+    background: linear-gradient(to bottom, #ffff55, #bca634);
+    color: #ffffff;
+    text-decoration: none;
+}
+.add:active {
+    background: #9d8a2b;
+    background: linear-gradient(to bottom, #9d8a2b, #9d8a2b);
+}
+/* .add:before{
+    content:  "➕　";
+    font-size: 20px;
+} */
+
+.editText {
+    width: 80%;
+    font-size: large;
+}
+
+.editDoneButton {
+    padding: 10px 30px;
+    margin-left: auto;
 }

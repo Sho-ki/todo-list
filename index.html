@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
-    <i class="fas fa-closed-captioning"></i>
+    <div class="section">
+        <h1 class="message">To Do List</h1>
+        <p class="message" styl="display: inline">Press Enter or Add button to add a task</p>
+        <div class="todoSection">
+            <input type="text" id="todoText" value="" class="textInput" onkeyup="countCharacters()">
+            <button id="add" class="add">Add</button>
+            <p id="countLetters" class="countLetters">0 / 65 Chracters</p>
+            <ul id="list" class="list">
+            </ul>
+        </div>
+    </div>
+    
  <!-- Script -->
  <script src="script.js"></script>
 </body>

@@ -17,6 +17,7 @@ body {
 .message {
     text-shadow: 1px 3px 2px black;
     color: rgb(253, 253, 253);
+    margin-left: 15px;
 }
 
 .countLetters {

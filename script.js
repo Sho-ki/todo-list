@@ -17,6 +17,7 @@ function countCharacters (){
 }
 
 function editTask() {
+    
     //iconの初期化
     let icon = document.createElement("i")
     let icon1 = document.createElement('i')
@@ -25,28 +26,37 @@ function editTask() {
 
     //thisのparentを取得
     let parent_li = this.parentNode;
-   
+
     //編集用スペース作成
     let edit_space = document.createElement("textarea");
     edit_space.setAttribute("rows", "1");
     edit_space.setAttribute("wrap", "hard")
     edit_space.className = "editText"
-    
+
     //元のtodoを編集用スペースに収納
     edit_space.innerText = parent_li.innerText
     //元のtodoを削除
     parent_li.innerHTML = ''
+    
     //元todo会った場所に編集用をappend
     parent_li.appendChild(edit_space)
-
+    
     //SAVEの作成
     let editDone = document.createElement("button");
     editDone.className = 'editDoneButton';
     editDone.innerText = 'SAVE'
     parent_li.appendChild(editDone);
 
-    //SAVE押したときの機能追加
-    editDone.addEventListener('click', ()=> {
+    function setCursor() {
+        let obj = parent_li.firstChild;
+        let e = obj.value;
+        obj.value = ''
+        obj.focus();     //テキストボックスにフォーカスを移動
+        obj.value = e; 
+        }
+        setCursor();
+
+    function save(){
         let check = edit_space.value;
         let substract = check.length - 65
         if(substract >= 2) {
@@ -68,13 +78,21 @@ function editTask() {
         icon.addEventListener("click", deleteTask)
         icon1.addEventListener("click", editTask)
     }
-    })
+    }
+   
+   editDone.addEventListener('click', save);
+   edit_space.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        save();
+    }
+    
+})
 }
 
 function deleteTask() {
     this.parentNode.remove()
 }
-
+ 
 let addTask =()=>{
     let check = inputText.value;
     if(check.length >65) alert('Too long, Text should be less') 
